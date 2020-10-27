@@ -18,8 +18,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo apt-get update
-          sudo apt-get -y install upx-ucl unzip git
-          sudo apt-get -y firefox hhvm
+          sudo apt-get -y install upx-ucl unzip
           git config --global user.email "action@github.com" && git config --global user.name "GitHub Action"
           wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash
 
