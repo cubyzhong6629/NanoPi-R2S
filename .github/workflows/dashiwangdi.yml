@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: master
-      - name: Initialization Environment
+      - name: initialization Environment
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
