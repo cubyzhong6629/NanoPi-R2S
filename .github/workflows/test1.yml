@@ -20,11 +20,3 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install upx-ucl unzip
           wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash
-
-      - name: Install Repo
-        run: |
-          git --version
-          git config --global user.email "action@github.com" 
-          git config --global user.name "GitHub Action"
-          git clone https://github.com/friendlyarm/repo
-          sudo cp repo/repo /usr/bin/
