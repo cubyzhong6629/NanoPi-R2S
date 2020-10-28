@@ -16,13 +16,13 @@ src-git openclash https://github.com/vernesong/OpenClash.git
 
 
 ## `openclash` 依赖包
+>>> 
 CONFIG_PACKAGE_iptables-mod-tproxy=y
 CONFIG_FEED_openclash=y
 CONFIG_PACKAGE_iptables=y
 CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_coreutils=y
 CONFIG_PACKAGE_coreutils-nohup=y
-
 CONFIG_PACKAGE_bash=y
 CONFIG_PACKAGE_libcurl=y
 CONFIG_PACKAGE_jsonfilter=y
