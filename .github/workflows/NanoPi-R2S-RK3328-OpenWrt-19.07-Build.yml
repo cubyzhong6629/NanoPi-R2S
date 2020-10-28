@@ -62,7 +62,7 @@ jobs:
           cp friendlywrt-rk3328/friendlywrt/.config ./artifact/
 
       - name: Upload Artifact
-          uses: actions/upload-artifact@main
+          uses: actions/upload-artifact
           with:
             name: FriendlyWrt_NanoPi-R2S RK3328
             path: ./artifact/
