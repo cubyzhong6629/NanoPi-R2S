@@ -17,9 +17,13 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update
+	  sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          sudo -E apt-get -qq update
+	  sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
+	  sudo -E apt-get -qq autoremove --purge
+	  sudo -E apt-get -qq clean
           sudo apt-get -y install upx-ucl unzip
-          git config --global user.email "action@github.com" && git config --global user.name "GitHub Action"
+          git config --global user.email "chinaluopiao@gmail.com" && git config --global user.name "luopiao"
           wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash
 
       - name: Install Repo
@@ -29,7 +33,6 @@ jobs:
 
       - name: Download Source
         run: |
-          rm -rf friendlywrt-rk3328
           mkdir friendlywrt-rk3328
           cd friendlywrt-rk3328
           repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master-v19.07.1 -m rk3328.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
