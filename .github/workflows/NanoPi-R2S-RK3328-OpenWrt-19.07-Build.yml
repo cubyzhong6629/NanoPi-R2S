@@ -61,8 +61,4 @@ jobs:
           find friendlywrt-rk3328/out/ -name "FriendlyWrt_*img*" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
           cp friendlywrt-rk3328/friendlywrt/.config ./artifact/
 
-      - name: Upload Artifact
-          uses: actions/upload-artifact@master
-          with:
-            name: FriendlyWrt_NanoPi-R2S RK3328
-            path: ./artifact/
+
