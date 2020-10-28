@@ -1,5 +1,7 @@
 name: NanoPi R2S FriendlyWrt Build
 
+on: 
+
 jobs:
   build:
     runs-on: ubuntu-18.04
