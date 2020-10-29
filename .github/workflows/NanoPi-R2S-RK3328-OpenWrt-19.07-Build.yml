@@ -48,14 +48,29 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
+      - name: Update Target.mk
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/include
+          sed -i 's/dnsmasq /dnsmasq-full default-settings luci /' target.mk
+
       - name: Write Config
         run: |
           cd friendlywrt-rk3328
           echo "CONFIG_FEED_openclash=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_luci-app-openclash=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-tproxy=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_coreutils=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_coreutils-nohup=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_bash=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_libcurl=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_jsonfilter=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ca-certificates=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ipset=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ip-full=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-extra=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
           cat configs/config_rk3328
 
       - name: Build FriendlyWrt
