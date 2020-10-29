@@ -30,3 +30,7 @@ CONFIG_PACKAGE_ca-certificates=y
 CONFIG_PACKAGE_ipset=y
 CONFIG_PACKAGE_ip-full=y
 CONFIG_PACKAGE_iptables-mod-extra=y
+
+
+## 出现问题
+1. clash不能启动，提示libcap版本不一致
