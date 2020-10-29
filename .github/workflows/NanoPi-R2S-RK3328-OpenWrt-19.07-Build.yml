@@ -56,13 +56,6 @@ jobs:
           echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-tproxy=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-extra=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_coreutils=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_coreutils-nohup=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_libcurl=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_jsonfilter=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_ca-certificates=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_ip-full=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
           cat configs/config_rk3328
 
       - name: Build FriendlyWrt
