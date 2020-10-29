@@ -76,7 +76,7 @@ jobs:
           echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
           cat configs/config_rk3328
 
-      - name: Build OpenWrt
+      - name: Build FriendlyWrt
         run: |
           cd friendlywrt-rk3328
           ./build.sh nanopi_r2s.mk
