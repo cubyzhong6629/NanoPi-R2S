@@ -38,6 +38,7 @@ CONFIG_PACKAGE_iptables-mod-extra=y
 
 ## 是否需要增加
 ```shell script
+          echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq_full_dhcp=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq_full_dnssec=y" >> configs/config_rk3328
