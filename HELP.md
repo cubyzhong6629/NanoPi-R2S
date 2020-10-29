@@ -34,3 +34,17 @@ CONFIG_PACKAGE_iptables-mod-extra=y
 
 ## 出现问题
 1. clash不能启动，提示libcap版本不一致
+
+
+## 是否需要增加
+```shell script
+          echo "CONFIG_PACKAGE_dnsmasq_full_dhcp=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_dnssec=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_auth=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_ipset=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_conntrack=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_noid=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq_full_tftp=y" >> configs/config_rk3328
+
+```

@@ -56,14 +56,6 @@ jobs:
           echo "CONFIG_PACKAGE_iptables-mod-tproxy=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dhcp=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dnssec=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_auth=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_ipset=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_conntrack=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_noid=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_tftp=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_coreutils=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_coreutils-nohup=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_bash=y" >> configs/config_rk3328
