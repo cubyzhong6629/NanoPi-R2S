@@ -37,7 +37,7 @@ jobs:
           repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m rk3328.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
           repo sync -c  --no-clone-bundle
 
-      - name: update libcap
+      - name: Upgrade Libcap
         run: |
           cd friendlywrt-rk3328
           git clone https://github.com/openwrt/packages.git
