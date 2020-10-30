@@ -56,7 +56,7 @@ jobs:
       - name: echo libcap version
         run: |
           cd friendlywrt-rk3328/
-          cat package/libs/libcap/Makefile
+          cat friendlywrt/package/libs/libcap/Makefile
 
       - name: Write Config
         run: |
