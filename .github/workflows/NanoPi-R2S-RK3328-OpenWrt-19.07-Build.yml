@@ -37,6 +37,15 @@ jobs:
           repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m rk3328.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
           repo sync -c  --no-clone-bundle
 
+      - name: update libcap
+        run: |
+          cd friendlywrt-rk3328
+          git clone https://github.com/openwrt/packages.git
+          rm -rf friendlywrt/package/libs/libcap
+          cp -r packages/libs/libcap friendlywrt/package/libs/
+          cat friendlywrt/package/libs/libcap/Makefile
+
+
       - name: Install OpenClash
         run: |
           cd friendlywrt-rk3328/friendlywrt/
@@ -52,11 +61,6 @@ jobs:
         run: |
           cd friendlywrt-rk3328/friendlywrt/include
           sed -i 's/dnsmasq /dnsmasq-full default-settings luci /' target.mk
-
-      - name: echo libcap version
-        run: |
-          cd friendlywrt-rk3328/
-          cat friendlywrt/package/libs/libcap/Makefile
 
       - name: Write Config
         run: |
