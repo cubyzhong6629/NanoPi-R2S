@@ -11,6 +11,11 @@
 8. https://github.com/friendlyarm/friendlywrt
 
 
+## `openwrt`官方依赖包
+
+>>>
+[https://downloads.openwrt.org/](https://downloads.openwrt.org/)
+
 ## 集成`openclash`源码
 src-git openclash https://github.com/vernesong/OpenClash.git
 
@@ -47,7 +52,6 @@ CONFIG_PACKAGE_iptables-mod-extra=y
           echo "CONFIG_PACKAGE_dnsmasq_full_conntrack=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq_full_noid=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq_full_tftp=y" >> configs/config_rk3328
-
 ```
 
 
