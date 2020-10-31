@@ -72,6 +72,7 @@ jobs:
           echo "CONFIG_PACKAGE_ipset=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_ip-full=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-extra=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_kmod-fs-ext4=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_kmod-fs-ntfs=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_kmod-fs-vfat=y" >> configs/config_rk3328
