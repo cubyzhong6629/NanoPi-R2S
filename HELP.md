@@ -21,7 +21,7 @@ src-git openclash https://github.com/vernesong/OpenClash.git
 
 
 ## `openclash` 依赖包
->>> 
+``` properties
 CONFIG_PACKAGE_iptables-mod-tproxy=y
 CONFIG_FEED_openclash=y
 CONFIG_PACKAGE_iptables=y
@@ -35,31 +35,51 @@ CONFIG_PACKAGE_ca-certificates=y
 CONFIG_PACKAGE_ipset=y
 CONFIG_PACKAGE_ip-full=y
 CONFIG_PACKAGE_iptables-mod-extra=y
-
-
-## 出现问题
-1. clash不能启动，提示libcap版本不一致
-
-
-## 是否需要增加
-```shell script
-          echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dhcp=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_dnssec=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_auth=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_ipset=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_conntrack=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_noid=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_dnsmasq_full_tftp=y" >> configs/config_rk3328
 ```
+
+
+
+## 增加`OpenClash`
+
+```yaml
+      - name: Install OpenClash
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/
+          echo "src-git openclash https://github.com/vernesong/OpenClash.git" >> feeds.conf.default
+
+      - name: Update Target.mk
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/include
+          sed -i 's/dnsmasq /dnsmasq-full default-settings luci /' target.mk
+```
+
+
+## 增加依赖包
+```shell script
+          echo "CONFIG_FEED_openclash=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_luci-app-openclash=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_iptables-mod-tproxy=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_coreutils=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_coreutils-nohup=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_bash=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_libcurl=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_jsonfilter=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ca-certificates=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ipset=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_ip-full=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_iptables-mod-extra=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
+```
+
 
 
 ## `.config`配置
 
 1. 来自[fanck0605](https://github.com/fanck0605/openwrt-nanopi-r2s)
 
-```textmate
+```properties
 
 CONFIG_TARGET_rockchip=y
 CONFIG_TARGET_rockchip_armv8=y

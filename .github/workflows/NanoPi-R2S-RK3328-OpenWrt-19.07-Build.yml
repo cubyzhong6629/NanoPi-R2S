@@ -46,12 +46,6 @@ jobs:
           cp -r packages/libs/libcap friendlywrt/package/libs/
           cat friendlywrt/package/libs/libcap/Makefile
 
-
-      - name: Install OpenClash
-        run: |
-          cd friendlywrt-rk3328/friendlywrt/
-          echo "src-git openclash https://github.com/vernesong/OpenClash.git" >> feeds.conf.default
-
       - name: Update Feeds
         run: |
           cd friendlywrt-rk3328/friendlywrt
@@ -61,13 +55,11 @@ jobs:
       - name: Update Target.mk
         run: |
           cd friendlywrt-rk3328/friendlywrt/include
-          sed -i 's/dnsmasq /dnsmasq-full default-settings luci /' target.mk
+          sed -i 's/dnsmasq/dnsmasq-full/' target.mk
 
       - name: Write Config
         run: |
           cd friendlywrt-rk3328
-          echo "CONFIG_FEED_openclash=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_luci-app-openclash=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-tproxy=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_dnsmasq-full=y" >> configs/config_rk3328
@@ -80,7 +72,10 @@ jobs:
           echo "CONFIG_PACKAGE_ipset=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_ip-full=y" >> configs/config_rk3328
           echo "CONFIG_PACKAGE_iptables-mod-extra=y" >> configs/config_rk3328
-          echo "CONFIG_PACKAGE_libcap-bin=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_kmod-fs-ext4=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_kmod-fs-ntfs=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_kmod-fs-vfat=y" >> configs/config_rk3328
+          echo "CONFIG_PACKAGE_kmod-tun=y" >> configs/config_rk3328
           cat configs/config_rk3328
 
       - name: Build FriendlyWrt
