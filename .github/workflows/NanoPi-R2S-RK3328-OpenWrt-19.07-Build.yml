@@ -45,6 +45,11 @@ jobs:
           rm -rf friendlywrt/package/libs/libcap
           cp -r packages/libs/libcap friendlywrt/package/libs/
           cat friendlywrt/package/libs/libcap/Makefile
+          
+      - name: Install Ssr Plus
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/
+          echo "src-git surplus https://github.com/maxlicheng/luci-app-ssr-plus.git" >> feeds.conf.default
 
       - name: Update Feeds
         run: |
